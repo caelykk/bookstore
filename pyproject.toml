@@ -45,9 +45,3 @@ skip = ["migrations"]  # пропускать миграции
 [tool.ruff]  # ruff — быстрый линтер и fixer
 line-length = 88
 
-[tool.ruff.lint]
-
-[tool.ruff.format]
-quote-style = "single"
-indent-style = "tab"
-docstring-code-format = true

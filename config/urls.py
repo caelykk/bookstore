@@ -31,13 +31,13 @@ from django.urls import include, path
 
 # основной список URL-ов для проекта
 urlpatterns = [
-	# URL для админки: /admin/
-	path('admin/', admin.site.urls),
-	# подключаем URL-ы приложения catalog на корневой путь ''
-	# все пути, описанные в catalog/urls.py, будут доступны с корня сайта
-	path('', include('catalog.urls')),
+    # URL для админки: /admin/
+    path("admin/", admin.site.urls),
+    # подключаем URL-ы приложения catalog на корневой путь ''
+    # все пути, описанные в catalog/urls.py, будут доступны с корня сайта
+    path("", include("catalog.urls")),
 ]
 
 # в режиме DEBUG (локально) отдаём медиа-файлы через Django (не для продакшена)
 if settings.DEBUG:
-	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
