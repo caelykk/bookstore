@@ -1,0 +1,36 @@
+/* static/css/main.css - базовые стили для старта */
+
+/* сброс базовых отступов/шрифтов */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+}
+
+/* шапка */
+header {
+  background: #0b3d91; /* синий фон */
+  color: white;
+  padding: 12px 20px;
+}
+
+/* ссылки в шапке */
+header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* основной контейнер */
+main {
+  padding: 20px;
+}
+
+/* простая карточка */
+.hero {
+  background: #f5f7fb;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
