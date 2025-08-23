@@ -23,3 +23,31 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+django-extensions = "^4.1"
+pre-commit = "^4.3.0"
+black = "^25.1.0"
+isort = "^6.0.1"
+ruff = "^0.12.10"
+
+
+
+[tool.black]  # black — автоформаттер
+line-length = 88  # рекомендуемая длина строки (по умолчанию 88)
+
+[tool.isort]  # isort — сортировка импортов
+profile = "black"  # совместимость с black
+line_length = 88
+known_first_party = ["catalog", "orders", "accounts", "core"]  # твои приложения
+skip = ["migrations"]  # пропускать миграции
+
+[tool.ruff]  # ruff — быстрый линтер и fixer
+line-length = 88
+
+[tool.ruff.lint]
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "tab"
+docstring-code-format = true

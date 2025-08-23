@@ -1,0 +1,23 @@
+# .pre-commit-config.yaml — конфигурация pre-commit hooks
+
+repos:
+  - repo: https://github.com/psf/black  # репозиторий black
+    rev: 25.1.0
+    hooks:
+      - id: black
+        name: black
+        args: [--line-length=88]
+
+  - repo: https://github.com/PyCQA/isort  # репозиторий isort
+    rev: 6.0.1
+    hooks:
+      - id: isort
+        name: isort
+        args: ["--profile", "black"]
+
+  - repo: https://github.com/returntocorp/ruff-pre-commit  # ruff через pre-commit
+    rev: 0.12.10
+    hooks:
+      - id: ruff
+        name: ruff
+        args: ["check", "--fix"]  # ruff будет пытаться автоматически фиксить проблемы
