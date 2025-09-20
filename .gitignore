@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+env/
+.venv/
+venv/
+pip-log.txt
+pip-delete-this-directory.txt
+*.egg-info/
+dist/
+build/
+
+# Django
+*.sqlite3
+media/
+staticfiles/
+static/
+# if you create local settings file:
+local_settings.py
+
+# VS Code
+.vscode/
+
+# Node
+node_modules/
+
+# Mac/Windows
+.DS_Store
+Thumbs.db
