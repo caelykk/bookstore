@@ -31,3 +31,5 @@ node_modules/
 .DS_Store
 Thumbs.db
 my_notes.txt
+
+workspace.code-workspace
