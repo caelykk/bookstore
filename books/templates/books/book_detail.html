@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}{{ book.name }} — Подробно{% endblock %}
+
+{% block content %}
+<article>
+  <h1>{{ book.name }}</h1>
+
+  {% if book.image %}
+    <div>
+      <img src="{{ book.image.url }}" alt="{{ book.name }}" style="max-width:300px;">
+    </div>
+  {% endif %}
+
+  {% if book.price %}
+    <p>
+      Цена: {{ book.get_price_after_discount }} ₽
+      {% if book.discount %}
+        <span style="text-decoration:line-through; margin-left:8px;">{{ book.price }} ₽</span>
+      {% endif %}
+    </p>
+  {% endif %}
+
+  {% if book.page_count %}
+    <p>Страниц: {{ book.page_count }}</p>
+  {% endif %}
+
+  {% if book.volume %}
+    <p>Том: {{ book.volume }}</p>
+  {% endif %}
+
+  {% if book.edition %}
+    <p>Издание: {{ book.edition }}</p>
+  {% endif %}
+
+  {% if book.circulation %}
+    <p>Тираж: {{ book.circulation }}</p>
+  {% endif %}
+
+  <p>В наличии: {{ book.stock }}</p>
+
+  {% if book.description %}
+    <section>
+      <h2>Описание</h2>
+      <p>{{ book.description|linebreaks }}</p>
+    </section>
+  {% endif %}
+</article>
+{% endblock %}

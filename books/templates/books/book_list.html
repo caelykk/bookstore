@@ -1,1 +1,55 @@
 {% extends "base.html" %}
+
+{% block title %}Каталог книг{% endblock %}
+
+{% block content %}
+<h1>Каталог книг</h1>
+
+{% if books %}
+  <div>
+    {% for book in books %}
+      <article>
+        {% if book.image %}
+          <div>
+            <img src="{{ book.image.url }}" alt="{{ book.name }}" style="max-width:200px;">
+          </div>
+        {% endif %}
+
+        <h2>{{ book.name }}</h2>
+
+        {% if book.page_count %}
+          <div>Стр.: {{ book.page_count }}</div>
+        {% endif %}
+
+        {% if book.edition %}
+          <div>Издание: {{ book.edition }}</div>
+        {% endif %}
+
+        <div>
+          Цена: {{ book.get_price_after_discount }} ₽
+          {% if book.discount %}
+            <span style="text-decoration:line-through;">{{ book.price }} ₽</span>
+          {% endif %}
+        </div>
+
+        <div>В наличии: {{ book.stock }}</div>
+      </article>
+      <hr>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>Пока нет книг в каталоге.</p>
+{% endif %}
+
+{% if is_paginated %}
+  <div>
+    {% if page_obj.has_previous %}
+      <a href="?page={{ page_obj.previous_page_number }}">Назад</a>
+    {% endif %}
+    <span>Стр. {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}</span>
+    {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number }}">Вперёд</a>
+    {% endif %}
+  </div>
+{% endif %}
+{% endblock %}

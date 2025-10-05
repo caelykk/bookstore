@@ -1,0 +1,25 @@
+{
+  "name": "bookstore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "sass assets/scss:static/css --no-source-map --style=compressed",
+    "dev-css": "sass --watch assets/scss:static/css --no-source-map --style=expanded"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caelykk/bookstore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caelykk/bookstore/issues"
+  },
+  "homepage": "https://github.com/caelykk/bookstore#readme",
+  "devDependencies": {
+    "sass": "^1.93.2"
+  }
+}
