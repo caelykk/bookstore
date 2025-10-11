@@ -8,7 +8,9 @@
     <link rel="stylesheet" href= "{% static 'css/main.css' %}" >
 </head>
 <body>
-    <header></header>
+    <header>
+        <a href="{% url 'login' %}">Войти</a>
+    </header>
     <content>
         {% block content %}{% endblock %}
     </content>
